@@ -1,0 +1,32 @@
+<%= form_with(model: [@magazine, add], local: true) do |form| %>
+  <% if add.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(add.errors.count, "error") %> prohibited this add from being saved:</h2>
+
+      <ul>
+      <% add.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div class="field">
+    <%= form.label :magazine_id %>
+    <%= form.text_field :magazine_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

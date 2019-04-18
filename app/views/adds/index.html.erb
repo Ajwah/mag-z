@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Adds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Brand</th>
+      <th>Magazine</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adds.each do |add| %>
+      <tr>
+        <td><%= add.content %></td>
+        <td><%= add.brand %></td>
+        <td><%= link_to add.magazine.name, add.magazine %></td>
+        <td><%= link_to 'Show', [@magazine, add] %></td>
+        <td><%= link_to 'Edit', edit_magazine_add_path(@magazine, add) %></td>
+        <td><%= link_to 'Destroy', [@magazine, add], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Add', new_magazine_add_path(@magazine)  %>
