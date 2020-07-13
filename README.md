@@ -12,12 +12,14 @@ Some resources require the context of another resource.
        
   `/magazines/1/adds` and `/magazines/1/adds/1`
 
-[https://github.com/Ajwah/mag-z/blob/master/config/routes.rb#L2-L4](```ruby
+[https://github.com/Ajwah/mag-z/blob/master/config/routes.rb#L2-L4](routes.rb):
+
+```ruby
   namespace :admin do
     resources :blogs
   end
 ```
-)
+
 # Namespace
    Some resources require a conceptual context
    e.g.: An `admin` is to manage website content - `blog`s. 
